@@ -45,35 +45,35 @@ const News = () => {
                 Something went wrong. Please try again later.
                 </div>
             ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {newsItems.map((item, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {newsItems.map((item, index) => (
                     <a
-                    key={index}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
+                      key={index}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
                     >
-                        <Card className="bg-transparent border-0 cursor-pointer transition-colors duration-300 hover:bg-[#2A283E] rounded-lg">
-                            <CardContent className="flex flex-row sm:flex-col gap-4 p-4">
-                            <img
-                                className="w-24 h-24 sm:w-full sm:h-[179px] object-cover rounded-md flex-shrink-0"
-                                src={item.image}
-                                alt={item.headline}
-                            />
-                            <div className="flex flex-col gap-2 w-full">
-                                <div className="flex items-center justify-between text-xs text-gray-400">
-                                <span>{item.source}</span>
-                                <span>{formatDate(item.datetime)}</span>
-                                </div>
-                                <h2 className="text-white text-sm font-medium leading-snug">
-                                {item.headline}
-                                </h2>
+                      <Card className="bg-transparent border-0 cursor-pointer transition-colors duration-300 hover:bg-[#2A283E] rounded-lg">
+                        <CardContent className="flex flex-row md:flex-col gap-4 p-4">
+                          <img
+                            className="w-24 h-24 md:w-full md:h-[179px] object-cover rounded-md flex-shrink-0"
+                            src={item.image}
+                            alt={item.headline}
+                          />
+                          <div className="flex flex-col gap-2 w-full">
+                            <div className="flex items-center justify-between text-xs text-gray-400">
+                              <span>{item.source}</span>
+                              <span>{formatDate(item.datetime)}</span>
                             </div>
-                            </CardContent>
-                        </Card>
+                            <h2 className="text-white text-sm font-medium leading-snug">
+                              {item.headline}
+                            </h2>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </a>
-                ))}
+                  ))}
                 </div>
             )}
         </section>
